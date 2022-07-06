@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# sysinfo_page - A script to produce an HTML file
+
+title="My System Information for $HOSTNAME"
+date_time="$(date +"%x %r %z")"
+time_stamp="Updated on $date_time by user $USER"
+cat <<- _EOF_
+    <html>
+    <head>
+        <title>
+        $title
+        </title>
+    </head>
+
+    <body>
+    <h1>$title</h1>
+     <p>$time_stamp</p>
+    </body>
+    </html>
+_EOF_
